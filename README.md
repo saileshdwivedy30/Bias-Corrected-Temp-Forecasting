@@ -16,17 +16,19 @@ This enables continuously updated, bias-corrected predictions as new truth arriv
 
 > The online bias-corrector beats GFS **most of the time**, with the strongest gains late in the **3–8 h** window and clear **regional pockets** of improvement.
 
-1. **Spatial Win-rate Map (day aggregate)**
+1. **Scoreboard (overall MAE)**
+   >Model trims aggregate MAE from **1.25 to 1.24 °C** (**+0.9%**). Positive, consistent with other views.
+   
+   ![Scoreboard](./scoreboard.png)
+
+
+2. **Spatial Win-rate Map (day aggregate)**
    > Blue = model wins more often; computed per grid cell across the day.
 
    > Clear **regional regimes**: broad blue zones = reliable improvement; red pockets = where GFS holds an edge.
    
    ![Winrate Map](./win_rate_map.png)
 
-2. **Scoreboard (overall MAE)**
-   >Model trims aggregate MAE from **1.25 to 1.24 °C** (**+0.9%**). Positive, consistent with other views.
-   
-   ![Scoreboard](./scoreboard.png)
 
 3. **MAE by Cycle (00Z/06Z/12Z/18Z)**
    > Beats GFS in **3/4 cycles** (Delta **–0.03 to –0.04 °C** at 06Z/12Z and **–0.02 °C** at 18Z).

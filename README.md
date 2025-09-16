@@ -12,7 +12,7 @@ This enables continuously updated, bias-corrected predictions as new truth arriv
 
 ---
 
-## Results at a glance (2024-10-01)
+## Results at a glance (1 Oct, 2024)
 
 > The online bias-corrector beats GFS **most of the time**, with the strongest gains late in the **3–8 h** window and clear **regional pockets** of improvement.
 

@@ -17,7 +17,7 @@ This enables continuously updated, bias-corrected predictions as new truth arriv
 > The online bias-corrector beats GFS **most of the time**, with the strongest gains late in the **3–8 h** window and clear **regional pockets** of improvement.
 
 1. **Spatial Win-rate Map (day aggregate)**
-   > Blue = model wins more often; computed per grid cell across the day.”
+   > Blue = model wins more often; computed per grid cell across the day.
 
    > Clear **regional regimes**: broad blue zones = reliable improvement; red pockets = where GFS holds an edge.
    

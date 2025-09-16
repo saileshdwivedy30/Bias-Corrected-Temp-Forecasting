@@ -1,0 +1,43 @@
+# Python cache and build
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pkl
+*.egg-info/
+*.egg
+build/
+dist/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Streamlit
+.streamlit/
+# (streamlit stores config and credentials here – usually safe to ignore)
+
+# Logs and temp
+*.log
+*.tmp
+*.swp
+*.bak
+
+
+# IDE/editor settings
+.vscode/
+.idea/
+*.iml
+
+# PDF uploads (avoid committing user files)
+*.pdf
+uploads/
+data/
+docs/

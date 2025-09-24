@@ -10,6 +10,9 @@ This enables continuously updated, bias-corrected predictions as new truth arriv
 
 *Demo window:* **2024-10-01 to 2024-10-07**
 
+The one day demo (2024-10-01) that was previously computed can be found here. ([One Day README](One_Day/README.md)).
+
+
 ---
 
 ## Results at a glance (1 Oct, 2024 to 7 Oct, 2024)

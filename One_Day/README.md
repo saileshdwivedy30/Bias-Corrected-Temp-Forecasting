@@ -8,18 +8,18 @@ An **end-to-end, online bias-correction pipeline** that
 
 This enables continuously updated, bias-corrected predictions as new truth arrives.
 
-*Demo window:* **2024-10-01 to 2024-10-07**
+*Demo window:* **2024-10-01** (one day, due to compute). More days will stabilize and typically increase performance.
 
 ---
 
-## Results at a glance (1 Oct, 2024 to 7 Oct, 2024)
+## Results at a glance (1 Oct, 2024)
 
-> The online bias-corrector beats GFS, with the strongest gains in the **3–8 h** window and clear **regional pockets** of improvement.
+> The online bias-corrector beats GFS **most of the time**, with the strongest gains late in the **3–8 h** window and clear **regional pockets** of improvement.
 
 1. **Scoreboard (overall MAE)**
-   >Model trims aggregate MAE from **1.21 to 1.19 °C** (**+2%**). Positive, consistent with other views.
+   >Model trims aggregate MAE from **1.25 to 1.24 °C** (**+0.9%**). Positive, consistent with other views.
    
-   ![Scoreboard](./scoreboard_7day.png)
+   ![Scoreboard](./scoreboard.png)
 
 
 2. **Spatial Win-rate Map (day aggregate)**
@@ -27,19 +27,20 @@ This enables continuously updated, bias-corrected predictions as new truth arriv
 
    > Clear **regional regimes**: broad blue zones = reliable improvement; red pockets = where GFS holds an edge.
    
-   ![Winrate Map](./win_rate_map_7day.png)
+   ![Winrate Map](./win_rate_map.png)
 
 
 3. **MAE by Cycle (00Z/06Z/12Z/18Z)**
-   > Beats GFS in **all cycles**
+   > Beats GFS in **3/4 cycles** (Delta **–0.03 to –0.04 °C** at 06Z/12Z and **–0.02 °C** at 18Z).
+   **00Z** is slightly worse (**+0.04 °C**)
 
-   ![MAE by Cycle](./mae_cycle_7day.png)
+   ![MAE by Cycle](./mae_cycle.png)
 
 4. **Win-rate vs GFS (by lead 3–8 h)**
 
-   > Greater than 60% wins at every lead.
+   > Greater than 50% wins at every lead, peaking **\~60–61%** at **+7–8 h**; near parity at **+5 h**.
 
-   ![Winrate by Lead](./model_beat_gfs_7day.png)
+   ![Winrate by Lead](./model_beat_gfs.png)
 
 
 ---
@@ -71,7 +72,7 @@ Bias MLP (online) ──┤
 
 ## Modeling notes
 
-* **Target:** residual learning on top of GFS (`Y = GFS + f(features)`), predict a **3-lead block** jointly.
+* **Target:** residual learning on top of GFS (`Y ≈ GFS + f(features)`), predict a **3-lead block** jointly.
 * **Features:** local GFS temps (context & targets), lat/lon trig terms, hour-of-day & day-of-year sin/cos, cycle index.
 * **Network:** MLP (64×2, dropout 0.1), sized for fast online updates.
 * **Scaler:** streaming Welford variance; persisted to JSON.
